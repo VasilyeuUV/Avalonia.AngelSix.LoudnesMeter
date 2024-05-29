@@ -7,11 +7,28 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\Images\Cag.svg" />
+    <None Remove="Assets\Images\DoubleArrow.svg" />
+    <None Remove="Assets\Images\Export.svg" />
+    <None Remove="Assets\Images\Lock.svg" />
+    <None Remove="Assets\Images\Monitor.png" />
+    <None Remove="Assets\Images\Monitor.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaXaml Include="Assets\Images\Cag.svg" />
+    <AvaloniaXaml Include="Assets\Images\DoubleArrow.svg" />
+    <AvaloniaXaml Include="Assets\Images\Export.svg" />
+    <AvaloniaXaml Include="Assets\Images\Lock.svg" />
+    <AvaloniaXaml Include="Assets\Images\Monitor.png" />
+    <AvaloniaXaml Include="Assets\Images\Monitor.svg" />
+  </ItemGroup>
 
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.0.10" />
     <PackageReference Include="Avalonia.Desktop" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Svg.Skia" Version="11.0.0.18" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->

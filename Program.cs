@@ -1,4 +1,4 @@
-﻿using Avalonia;
+﻿using Avalonia.Svg.Skia;
 using System;
 
 namespace Avalonia.AngelSix.LoudnesMeter
@@ -14,9 +14,13 @@ namespace Avalonia.AngelSix.LoudnesMeter
 
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .WithInterFont()
-                .LogToTrace();
+        {
+            GC.KeepAlive(typeof(SvgImageExtension).Assembly);
+            GC.KeepAlive(typeof(Svg.Skia.Svg).Assembly);
+            return AppBuilder.Configure<App>()
+                        .UsePlatformDetect()
+                        .WithInterFont()
+                        .LogToTrace();
+        }
     }
 }
